@@ -20,12 +20,14 @@ The above run configuration gives the server network access as well as read and 
 
 ### Deployment
 
-There are multiple ways to run Deno. An easy way is through [denon](https://deno.land/x/denon). 
-
-First install it:
+There are multiple ways to run Deno. An easy way to run it in the background is with Docker. Install docker and run the following command in the project directory:
 
 ```shell
-deno install -qAf --unstable https://deno.land/x/denon@2.4.9/denon.ts
+docker build -t statusdeploy . && docker run -d -p 127.0.0.1:8080:8080 statusdeploy
 ```
 
-A `scripts.json` file is provided already. So running `denon start` in the main project directory should do it.
+Then run `docker container ls` to check if it is running. If it isn't, run `docker run -it 127.0.0.1:8080:8080 statusdeploy` to see what's going wrong. Be sure to configure server_config.yaml.
+
+If successful, this builds an image called statusdeploy and then runs the container in the background, with the website accessible at localhost:8080.
+
+Use a reverse proxy (e.g. using nginx) to create the web endpoint.

@@ -18,7 +18,6 @@ else {
 
 // Use zod to create a schema for the config
 const ServerConfig = z.object({
-    hostname: z.string(),
     port: z.number(),
 });
 type ServerConfig = z.infer<typeof ServerConfig>;
@@ -37,5 +36,5 @@ app.use((ctx) => {
     ctx.response.body = "Hello World!";
 });
 
-console.log(`Starting now at ${server_config.hostname}:${server_config.port}.`)
-await app.listen({ hostname: server_config.hostname, port: server_config.port })
+console.log(`Starting now at :${server_config.port}.`)
+await app.listen({ port: server_config.port })

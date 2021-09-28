@@ -29,3 +29,11 @@ makecert localhost
 ```
 
 This will generate a certificate file (`localhost.pem`) and a key file (`localhost-key.pem`). If you followed these exact steps, you are done, as the `dev_config.yaml` config file contains those two names by default and is read when the server starts. If you have your certificate and key files somewhere else, you need to change `dev_config.yaml` accordingly.
+
+### Deployment
+
+Run the following command from the project main directory. For `--allow-read`, be sure to include the directory for the certificate file. If you installed a certificate using certbot (Let's Encrypt), it is most likely as below (replace `<name>` with your certificate name).
+
+```shell
+deno run --allow-net --allow-read=.,/etc/letsencrypt/live/<name> --allow-write=. --unstable src/main.ts
+```

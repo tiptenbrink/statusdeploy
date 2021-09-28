@@ -37,8 +37,8 @@ const server_config: ServerConfig = ServerConfig.parse(config);
 const server = Deno.listenTls({
     port: server_config.port,
     hostname: server_config.hostname,
-    certFile: config_folder + "/" + server_config.certFile,
-    keyFile: config_folder + "/" + server_config.keyFile,
+    certFile: (dev_mode ? config_folder + "/" : "") + server_config.certFile,
+    keyFile: (dev_mode ? config_folder + "/" : "") + server_config.keyFile,
     alpnProtocols: ["h2", "http/1.1"],
 });
 console.log(`Running server at ${server_config.hostname}:${server_config.port}`)

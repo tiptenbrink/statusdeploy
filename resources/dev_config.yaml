@@ -1,0 +1,5 @@
+# Paths must be relative to dev_config.yaml
+certFile: 'localhost.pem'
+keyFile: 'localhost-key.pem'
+hostname: 'localhost'
+port: 8443

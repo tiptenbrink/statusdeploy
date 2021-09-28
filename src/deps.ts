@@ -8,5 +8,5 @@ export {
     parse as arg_parse
 } from "https://deno.land/std@0.109.0/flags/mod.ts";
 export {
-    Application
+    Application, send
 } from "https://deno.land/x/oak@v9.0.1/mod.ts"

@@ -1,4 +1,4 @@
-import {arg_parse, yaml_parse, z, Application} from "./deps.ts";
+import {arg_parse, yaml_parse, z, Application, send} from "./deps.ts";
 
 const config_folder = "./resources";
 
@@ -32,8 +32,11 @@ const server_config: ServerConfig = ServerConfig.parse(config);
 
 const app = new Application();
 
-app.use((ctx) => {
-    ctx.response.body = "Hello World!";
+app.use(async (context) => {
+    await send(context, context.request.url.pathname, {
+        root: `${Deno.cwd()}/sd`,
+        index: "index.html",
+    });
 });
 
 console.log(`Starting now at :${server_config.port}.`)

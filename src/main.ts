@@ -1,18 +1,18 @@
-import {arg_parse, yaml_parse, z, Application, send} from "./deps.ts";
+import {argParse, yamlParse, z, Application, send} from "./deps.ts";
 
-const config_folder = "./resources";
+const configFolder = "./resources";
 
 // Parse arguments provided after the filename.
 // Use --dev to specify using dev_config instead of server_config
-const args = arg_parse(Deno.args);
-let config_name;
-let dev_mode = !!args.dev;
-if (!dev_mode) {
-    config_name = "server_config.yaml";
+const args = argParse(Deno.args);
+let configName;
+const devMode = !!args.dev;
+if (!devMode) {
+    configName = "server_config.yaml";
     console.log("Starting server in PRODUCTION mode... Ensure server_config.yaml is configured correctly!");
 }
 else {
-    config_name = "dev_config.yaml";
+    configName = "dev_config.yaml";
     console.log("Starting server in DEVELOPMENT mode...")
 }
 
@@ -24,11 +24,11 @@ type ServerConfig = z.infer<typeof ServerConfig>;
 
 // Decode config information in yaml file
 const decoder = new TextDecoder("utf-8");
-const config_data = await Deno.readFile(config_folder + "/" + config_name);
-const config = await yaml_parse(decoder.decode(config_data));
+const configData = await Deno.readFile(configFolder + "/" + configName);
+const config = await yamlParse(decoder.decode(configData));
 
 // Parse config according to schema
-const server_config: ServerConfig = ServerConfig.parse(config);
+const serverConfig: ServerConfig = ServerConfig.parse(config);
 
 const app = new Application();
 
@@ -39,5 +39,5 @@ app.use(async (context) => {
     });
 });
 
-console.log(`Starting now at :${server_config.port}.`)
-await app.listen({ port: server_config.port })
+console.log(`Starting now at :${serverConfig.port}.`)
+await app.listen({ port: serverConfig.port })

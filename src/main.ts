@@ -34,7 +34,7 @@ const app = new Application();
 
 app.use(async (context) => {
     await send(context, context.request.url.pathname, {
-        root: `${Deno.cwd()}/sd`,
+        root: `${Deno.cwd()}/sd/dist`,
         index: "index.html",
     });
 });

@@ -13,9 +13,13 @@ USER deno
 COPY src/deps.ts ./src/deps.ts
 RUN deno cache src/deps.ts
 
-# These steps will be re-run upon each file change in your working directory:
-ADD . .
+# Add resources and other source files
+ADD resources ./resources
+ADD src ./src
 # Compile the main app so that it doesn't need to be compiled each startup/entry.
 RUN deno cache src/main.ts
+
+# Add the statically generated Aleph.js front-end HTML/JS
+ADD sd/dist ./sd/dist
 
 CMD ["run", "--allow-net", "--allow-read=.", "--allow-write=.", "src/main.ts"]

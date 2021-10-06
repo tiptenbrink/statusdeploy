@@ -15,11 +15,11 @@ export default function Home() {
         </div>
         <div id="sd">
             <div id="status" className="tabcontent">
-                <h3>Status</h3>
+                <h2>Status</h2>
 
             </div>
             <div id="deploy" className="tabcontent">
-                <h3>Deploy</h3>
+                <h2>Deploy</h2>
 
             </div>
         </div>

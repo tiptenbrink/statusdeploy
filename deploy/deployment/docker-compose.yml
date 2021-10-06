@@ -1,0 +1,6 @@
+version: '0.1'
+services:
+  sd:
+    image: "${APP_IMAGE}:${VERSION}"
+    ports:
+      - "127.0.0.1:${HOST_PORT}:${CONTAINER_PORT}"

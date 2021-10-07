@@ -1,4 +1,4 @@
-import type { APIHandler } from 'aleph/types.d.ts'
+import type { APIHandler } from 'aleph/types'
 import { decode as b64urlDecode } from 'base64url'
 
 /** 
@@ -17,9 +17,10 @@ export const handler: APIHandler = async ({ router, response }) => {
     catch {
         server = "Decoding Error (" + serverB64 + ")"
     }
+    console.log(server)
     
     // Here the actual fetch is performed to see if the remote server is alive/
-    const res = await fetch(server).then(res => res.text()).catch(res => "dead!")
+    const res = await fetch(server).then(res => res.text()).catch(_res => "dead!")
     
     const living = res === "alive!"
 

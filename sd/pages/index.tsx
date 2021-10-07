@@ -1,10 +1,8 @@
 import { useDeno } from 'aleph/react'
 import React, { useState } from 'react'
-import openTab from '~/lib/openTab.ts'
 import Footer from '~/components/footer.tsx'
 import Status from '~/components/status.tsx'
 import Filler from '~/components/filler.tsx'
-import SdTabs from '~/components/sdTabs.tsx'
 
 
 export default function Home() {

@@ -1,2 +1,3 @@
-/keys/
-/.idea/
+keys/
+.idea/
+__pycache__/

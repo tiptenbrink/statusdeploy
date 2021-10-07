@@ -3,10 +3,10 @@ FROM denoland/deno:1.14.2
 # The port that your application listens to.
 EXPOSE 8080
 
-RUN apt-get update
+RUN deno run -A https://deno.land/x/aleph@v0.3.0-beta.19/install.ts
 
-RUN apt-get install curl -y
+ADD /sd ./opt/sd
 
-ADD /sd .
+WORKDIR /opt/sd
 
 ENTRYPOINT ["./entrypoint.sh"]

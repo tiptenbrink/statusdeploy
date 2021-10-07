@@ -1,34 +1,14 @@
-@media (min-aspect-ratio: 3/2) {
+@import url('./standard.css');
 
-}
+@import url('./page.css');
 
-@media (max-aspect-ratio: 8/10) {
-    body {
-        font-size: 1.5em;
-    }
-}
-
-body, input, textarea, button {
-    font-family: 'Fira Sans', sans-serif;
-    color: #A9B7C6;
-}
-body {
-    background-color: #1a1a1c;
-}
-
-main {
-    display: flex;
-    max-width: 53rem;
-    margin: 0 auto 0;
-    padding: 0.5rem 1rem;
-    flex-direction: column;
-    height: 100%;
-}
+@import url('./footer.css');
 
 .tab {
     border-radius: 0.5em;
     display: flex;
     flex-direction: row;
+    padding-top: 0.5rem;
 }
 
 button {
@@ -76,5 +56,3 @@ button:hover {
 .tabcontent.active {
     display: block;
 }
-
-@import url('./footer.css')

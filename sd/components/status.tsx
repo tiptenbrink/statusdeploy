@@ -7,7 +7,6 @@ type StatusProps = {
 
 export default function Status({ server }: StatusProps) {
     const [isAlive, aliveMessage, isSyncing] = getAlive(server)
-    console.log(isAlive)
     
     return (
         <p> {isSyncing && (

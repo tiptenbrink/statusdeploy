@@ -23,10 +23,10 @@ docker build --tag tmtenbrink/statusdeploy .
 You can then run it in the background using:
 
 ```shell
-docker run -d 127.0.0.1:8080:8080 tmtenbrink/statusdeploy
+docker run -d -p 127.0.0.1:8080:8080 tmtenbrink/statusdeploy
 ```
 
-Then run `docker container ls` to check if it is running. If it isn't, run `docker run -it 127.0.0.1:8080:8080 statusdeploy` to see what's going wrong.
+Then run `docker container ls` to check if it is running. If it isn't, run `docker run -it -p 127.0.0.1:8080:8080 statusdeploy` to see what's going wrong.
 
 If successful, the web app is accessible at localhost:8080.
 

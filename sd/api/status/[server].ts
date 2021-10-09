@@ -17,9 +17,13 @@ export const handler: APIHandler = async ({ router, response }) => {
     catch {
         server = "Decoding Error (" + serverB64 + ")"
     }
+
+    // Make sure the request times out after 3 seconds, longer means the response took too long
+    const controller = new AbortController()
+    setTimeout(() => controller.abort(), 3000)
     
     // Here the actual fetch is performed to see if the remote server is alive/
-    const res = await fetch(server).then(res => res.text()).catch(_res => "dead!")
+    const res = await fetch(server, { signal: controller.signal }).then(res => res.text()).catch(_res => "dead!")
     
     const living = res === "alive!"
 

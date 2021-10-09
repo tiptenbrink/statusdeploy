@@ -1,5 +1,5 @@
 services:
-  tiauth:
+  sd:
     image: "${APP_IMAGE}:${VERSION}"
     ports:
       - "127.0.0.1:${HOST_PORT}:${CONTAINER_PORT}"

@@ -32,12 +32,22 @@ If successful, the web app is accessible at localhost:8080.
 
 Use a reverse proxy (e.g. using nginx) to create a web endpoint.
 
+#### Using tiptenbrink/deploy
+
 This project aims to automate deployment, so naturally the deployment of _this_ project can also be further automated. This is done using the [Python](https://www.python.org/) project in the `/deploy` subdirectory, which utilizes [Fabric](https://www.fabfile.org/) to remotely run commands via SSH. When the image is built, first push it to [Docker Hub](https://hub.docker.com/) using `docker push tmtenbrink/statusdeploy` (again, substitute the image repo with your own). 
 
-Once it is available, modify the `.env` file in `deploy/deployment`.
+Once it is available, take a look at `/deploy/deployment`. Modifying the `.env` provides a few basic configuration options (note that it must correspond to the actual build), but deployment can be further customized. The only requirement is a `deploy.sh` file.
 
-Finally, deploying is now as easy as installing `docker compose` on your server of choice, configuring SSH keys (by default the script will look for a `ssh.key` in the `/deploy/keys` directory) and running `main.py` in the `/deploy` subdirectory using Python. It is a [Poetry](https://python-poetry.org/) project, so it is recommended to install the dependencies using Poetry.
+Finally, deploying is now as easy as installing `docker compose` (V2) on your server of choice, configuring SSH keys (by default the script will look for a `ssh.key` in the `/deploy/keys` directory) and running `__main__.py` in the `/deploy` subdirectory using Python. It is a [Poetry](https://python-poetry.org/) project, so it is recommended to install the dependencies using Poetry. Run the script with the `--help` argument to find out the various arguments that can be provided.
 
-Also ensure there is a `deployment` directory in the home directory of your server.
+An example when using Poetry (shows help):
 
-This scripts transfers the files inside `/deploy/deployment` and then runs `deploy.sh`, which finally pulls the image and spins it up using docker compose (it assumes you are using Docker Compose V2). 
+```shell
+poetry run python __main__.py -h
+```
+
+Using a config YAML:
+
+```shell
+poetry run python __main__.py --yaml deployments/deployment.yml
+```

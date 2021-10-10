@@ -11,15 +11,6 @@ footer {
     height: 2.2em;
   }
   
-  .icon-container {
-    display: inline-block;
-    vertical-align: middle;
-  }
-  
-  .icon-container svg {
-    font-size: 1.2em;
-  }
-  
   footer a {
     display: inline-flex;
     align-items: center;
@@ -36,3 +27,7 @@ footer {
   footer p {
       margin: 0;
   }
+
+  .icon-container {
+    font-size: 1.2em;
+}

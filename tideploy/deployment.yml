@@ -1,0 +1,7 @@
+host: 192.168.178.62
+user: uauthnode
+port: 22
+key: './keys/ssh.key'
+svn-url:
+source: ./deployment
+target: ./deployment

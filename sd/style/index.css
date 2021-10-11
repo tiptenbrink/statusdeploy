@@ -8,7 +8,18 @@
 
 @import url('./deployable.css');
 
-.icon-container img {
+/* Ensures vertical centering of icons on their line */
+.icon-container img, svg {
     display: block;
     margin: 0 auto;
+}
+
+/* Proper link styling for deployment URLs */
+.deployable a {
+    color: #717181;
+    transition: color 0.1s ease-in-out;
+    text-decoration: none;
+}
+.deployable a:hover {
+    color: rgb(88, 88, 88);
 }

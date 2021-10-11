@@ -15,7 +15,6 @@ export default function Home() {
       <head>
         <title>Status Deploy</title>
         <link rel="stylesheet" href="../style/index.css" />
-        <script src="https://kit.fontawesome.com/25e7972463.js" crossOrigin="anonymous"></script>
       </head>
         <div id="tabs" className="tab">
             <button className={0 == activeTab ? 'active' : ''} onClick={() => setActiveTab(0)}>Status</button>

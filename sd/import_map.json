@@ -9,7 +9,8 @@
     "react-dom": "https://esm.sh/react-dom@17.0.2",
     "base64url": "https://deno.land/std@0.110.0/encoding/base64url.ts",
     "path": "https://deno.land/std@0.110.0/path/mod.ts",
-    "octokitRequest": "https://cdn.skypack.dev/@octokit/request@5.6.2"
+    "octokitRequest": "https://cdn.skypack.dev/@octokit/request@5.6.2",
+    "zod": "https://deno.land/x/zod@v3.9.8/mod.ts"
   },
   "scopes": {}
 }

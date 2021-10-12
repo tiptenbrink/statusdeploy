@@ -1,5 +1,5 @@
-host: 192.168.178.62
-user: uauthnode
+host: sd.tipten.nl
+user: transnode
 port: 22
 key: './keys/ssh.key'
 svn-url:

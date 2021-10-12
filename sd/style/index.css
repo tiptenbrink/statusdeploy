@@ -23,3 +23,34 @@
 .deployable a:hover {
     color: rgb(88, 88, 88);
 }
+
+.deployable {
+    font-size: 1.2em;
+}
+
+.deployable p {
+    margin: 0.5em 0;
+}
+
+.deployable li {
+    font-size: 0.8em;
+    margin: 0.2em 0;
+}
+
+ul.dashed {
+    list-style-type: none;
+    margin: 0;
+    list-style-position: inside;
+    padding-left: 0;
+}
+ul.dashed > li {
+    text-indent: 0;
+}
+ul.dashed > li:before {
+    content: "- ";
+    text-indent: 0;
+}
+
+.danger {
+    color: darkred;
+}

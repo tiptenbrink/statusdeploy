@@ -4,10 +4,13 @@ import { RunInfo, WorkflowRuns } from '~/api/deploy/runs.ts'
 export default function getRunInfo(): [RunInfo[], boolean] {
     
     const defaultRun: RunInfo = {
+        id: 0,
         name: "...",
         status: "",
         conclusion: "",
-        html_url: ""
+        html_url: "https://github.com",
+        head_sha: "",
+        event: ""
     }
     
     // useState is a React Hook, it basically initializes a dynamic variable (isAlive) and a function (setAlive) to change it
@@ -19,9 +22,7 @@ export default function getRunInfo(): [RunInfo[], boolean] {
     useEffect(() => {
         // It fetches the status API
         fetch('/api/deploy/runs').then(res => res.json().catch(() => ({})))
-        .then(({ runs }) => {
-            console.log("runs")  
-            console.log(runs)
+        .then(({ runs }) => { 
             const runList = WorkflowRuns.parse(runs).workflow_runs
             setRunInfo(runList)
         })

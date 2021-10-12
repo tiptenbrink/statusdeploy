@@ -1,12 +1,12 @@
-FROM denoland/deno:1.14.2
+FROM denoland/deno:1.14.3
+
+RUN deno run -A https://deno.land/x/aleph@v0.3.0-beta.19/install.ts
 
 # The port that your application listens to.
 EXPOSE 8080
 
-RUN deno run -A https://deno.land/x/aleph@v0.3.0-beta.19/install.ts
+ADD /sd ./sd
 
-ADD /sd ./opt/sd
-
-WORKDIR /opt/sd
+WORKDIR sd
 
 ENTRYPOINT ["./entrypoint.sh"]

@@ -6,11 +6,7 @@ authors = ["Tip ten Brink <75669206+tiptenbrink@users.noreply.github.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-tideploy = "^0.1.0"
-
-[[tool.poetry.source]]
-name = "testpypi"
-url = "https://test.pypi.org/simple/"
+tideploy = "^0.1.1"
 
 [tool.poetry.dev-dependencies]
 

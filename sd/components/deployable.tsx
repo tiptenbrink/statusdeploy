@@ -69,7 +69,7 @@ export default function Deployable({ server }: DeployableProps) {
             <p> 
                 {server}
                 {' '}
-                <button>Deploy from Docker <i aria-hidden className="fab fa-docker"></i></button>
+                <button onClick={deploy}>Deploy from Docker <i aria-hidden className="fab fa-docker"></i></button>
             </p>
             <p>{commit}</p>
             {isSyncing && (
@@ -115,4 +115,8 @@ function refreshJobInfo(run_id: number, runJobs: JobsMap, addRun: AddRun) {
     if (!runJobs.has(run_id)) {
         addRun(run_id)
     }
+}
+
+async function deploy() {
+    await fetch("/api/deploy/")
 }

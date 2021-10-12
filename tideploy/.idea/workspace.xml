@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a0f7a9c-3e93-4a53-bbe9-5a841ec6e975" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sd/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../sd/.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sd/api/deploy/runs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../sd/api/deploy/runs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sd/api/deploy/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../sd/api/deploy/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sd/components/deployable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../sd/components/deployable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sd/deno.json" beforeDir="false" afterPath="$PROJECT_DIR$/../sd/deno.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sd/lib/runInfo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../sd/lib/runInfo.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sd/style/deployable.css" beforeDir="false" afterPath="$PROJECT_DIR$/../sd/style/deployable.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sd/style/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/../sd/style/footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sd/style/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../sd/style/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deployment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +54,7 @@
       <option name="presentableId" value="Default" />
       <updated>1633972150010</updated>
       <workItem from="1633972151123" duration="1638000" />
-      <workItem from="1634006493590" duration="699000" />
+      <workItem from="1634006493590" duration="2603000" />
     </task>
     <servers />
   </component>

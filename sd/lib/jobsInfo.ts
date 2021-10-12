@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { JobInfo, RunJobs } from '~/api/deploy/[runJobs].ts'
+import { JobInfo, RunJobs } from '~/api/deploy/jobs/[runJobs].ts'
 import { z } from 'zod'
 
 export type JobsMap = Map<number, JobInfo[] | null>
@@ -33,7 +33,7 @@ export default function getJobsInfo(): [JobsMap, AddRun, AddRuns, boolean] {
     const addAllRuns = (run_ids: number[]) => {
       const newRunJobs: JobsMap = new Map<number, JobInfo[] | null>() 
       Promise.all(run_ids.map(id =>
-          fetch('/api/deploy/' + id.toString())
+          fetch('/api/deploy/jobs/' + id.toString())
         )).then(responses =>
           Promise.all(responses.map( res => res.json().catch(() => ({})) ))
         ).then( runJobsList => { 
@@ -59,7 +59,7 @@ export default function getJobsInfo(): [JobsMap, AddRun, AddRuns, boolean] {
     useEffect(() => {
       runJobs.forEach((jobsCurrent, run_id) => {
         if (jobsCurrent == null) {
-          fetch('/api/deploy/' + run_id.toString()).then(res => res.json().catch(() => ({})))
+          fetch('/api/deploy/jobs' + run_id.toString()).then(res => res.json().catch(() => ({})))
           .then(({ jobs }) => {
               if (jobs != undefined && jobs != null) {
                 const jobsNew = RunJobs.parse(jobs).jobs

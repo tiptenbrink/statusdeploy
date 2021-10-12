@@ -1,6 +1,6 @@
 host: sd.tipten.nl
 user: transnode
-port: 22
+port: 21678
 key: './keys/ssh.key'
 svn-url:
 source: ./deployment
